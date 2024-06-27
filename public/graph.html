@@ -1,0 +1,44 @@
+<!-- public/graph.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Financial Data</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Customer Financial Data</h1>
+  <canvas id="myChart" width="800" height="400"></canvas>
+  <script>
+    // JavaScript code to render chart using Chart.js
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        datasets: [{
+          label: 'Income',
+          data: [22474.00, 22190.00, 32460.00, 30277.00, 24646.00, 29125.00, 22592.00, 29536.00, 26838.00, 19687.00, 32264.00, 25710.00], 
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }, {
+          label: 'Expenses',
+          data: [13410.00, 5100.00, 16507.00, 26163.00, 19062.00, 22774.00, 8917.00, 6227.00, 19445.00, 25631.00, 12424.00, 17622.00], 
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
